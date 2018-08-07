@@ -1,85 +1,98 @@
-var feedback =  {
-    newDiv: null,
+let feedbackSD = {
     initDomId: '',
-    checkParams(params){
-      if(params && params.id) {
-        this.initDomId = params.id;
-        return true;
-      }
-      return false;
-    },
-    getFormTemplate(){
-      var html = [
-        '<div>',
-          '<label>Имя</label>',
-          '<input type="text" id="nameFeedbackForm" name="name"/>',
-        '</div>',
-        '<div>',
-          '<label>Электронная почта</label>',
-          '<input type="text" id="emailFeedbackForm" name="email"/>',
-        '</div>',
-        '<div>',
-        '<label>Ошибка</label>',
-        '<textarea name="textError" cols="40" rows="3"></textarea>',
-        '</div>',
-        '<input type="submit" id="formSubmit" value="Отправить ошибку"/>',
-      ].join('');
-      return html;
-    },
-    initDomFunc(params){
-      if (this.checkParams(params)){
-        const initDom = document.getElementById(params.id);
-        if (initDom) {
-          this.newDiv = document.createElement('button');
-          this.newDiv.setAttribute("buttonId","");
-          this.newDiv.innerHTML = 'Получить форму!';
-          initDom.appendChild(this.newDiv);
-          this.initOnClick();
+    endpoit: '',
+    initBtn: null,
+    initBtnTitle: 'Feedback',
+    checkParams(params) {
+        if (params && params.id) {
+            this.initDomId = params.id;
+        } else {
+            console.log('check id');
         }
-      } else {
-        console.log('Проверьте правильность параметров при инициализации функуии')
-      }
+
+        if (params && params.initBtnTitle) {
+            this.initBtnTitle = params.initBtnTitle;
+        }
+
+        if (params && params.endpoit) {
+            this.endpoit = params.endpoit;
+            return true;
+        } else {
+            console.log('check endpoit');
+        }
+
+        return false;
     },
-    initOnClick(){
-      this.newDiv.onclick = this.loadForm.bind(this);
+    getFormTemplate() {
+        var html = [
+            '<div>',
+            '<label>Имя</label>',
+            '<input type="text" id="nameFeedbackForm" name="name"/>',
+            '</div>',
+            '<div>',
+            '<label>Электронная почта</label>',
+            '<input type="text" id="emailFeedbackForm" name="email"/>',
+            '</div>',
+            '<div>',
+            '<label>Ошибка</label>',
+            '<textarea name="textError" cols="40" rows="3"></textarea>',
+            '</div>',
+            '<input type="submit" id="formSubmit" value="Отправить ошибку"/>',
+        ].join('');
+        return html;
     },
-    initFormClick(){
-      const submitBtn = document.getElementById('formSubmit');
-      submitBtn.onclick = this.sendForm.bind(this);
+    init(params) {
+        if (this.checkParams(params)) {
+            const initDom = document.getElementById(params.id);
+            if (initDom) {
+                this.initBtn = document.createElement('button');
+                this.initBtn.setAttribute('buttonId', '');
+                this.initBtn.innerHTML = this.initBtnTitle;
+                initDom.appendChild(this.initBtn);
+                this.initOnClick();
+            }
+
+        } else {
+            console.log('Not initialized');
+        }
     },
-    sendForm(req){
-      let reqObject = {};
-
-      reqObject = this.getFormValues();
-
-
-      var xhr = new XMLHttpRequest();
-      var body = 'name=' + encodeURIComponent(reqObject.name) +
-        '&surname=' + encodeURIComponent(reqObject.email);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-      xhr.open('POST', 'localhost', true);
-      xhr.send(body);
-      return false;
-
+    initOnClick() {
+        this.initBtn.onclick = this.loadForm.bind(this);
     },
-    getFormValues(e){
-      debugger;
-      const nameFeedbackForm = document.getElementById('nameFeedbackForm').value;
-      const emailFeedbackForm = document.getElementById('emailFeedbackForm').value;
-      if (nameFeedbackForm && emailFeedbackForm) {
-        return {name: nameFeedbackForm, email: emailFeedbackForm}
-      }
-      return {name: '', email: ''}
+    initFormClick() {
+        const submitBtn = document.getElementById('formSubmit');
+        submitBtn.onclick = this.sendForm.bind(this);
+    },
+    sendForm() {
+        let reqObject = {};
+
+        reqObject = this.getFormValues();
+
+        let xhr = new XMLHttpRequest();
+        let body = 'name=' + encodeURIComponent(reqObject.name) +
+            '&surname=' + encodeURIComponent(reqObject.email);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+        xhr.open('POST', this.endpoit, true);
+        xhr.send(body);
+        return false;
+    },
+    getFormValues() {
+        const nameFeedbackForm = document.getElementById('nameFeedbackForm').value;
+        const emailFeedbackForm = document.getElementById('emailFeedbackForm').value;
+        if (nameFeedbackForm && emailFeedbackForm) {
+            return {name: nameFeedbackForm, email: emailFeedbackForm};
+        }
+        return {name: '', email: ''};
     },
 
-    loadForm(){
-      let formWrapper = document.createElement('form');
-      formWrapper.innerHTML = this.getFormTemplate();
-      let initDom = document.getElementById(this.initDomId);
-      initDom.appendChild(formWrapper);
-      this.initFormClick();
+    loadForm() {
+        let formWrapper = document.createElement('form');
+        formWrapper.innerHTML = this.getFormTemplate();
+        let initDom = document.getElementById(this.initDomId);
+        initDom.appendChild(formWrapper);
+        this.initFormClick();
     }
 };
 
-window.feedback = feedback;
+window.feedbackSD = feedbackSD;
