@@ -1,0 +1,15 @@
+{
+  "name": "feedback-lib",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "author": "Dima Bukhal - dimabuhal@gmail.com",
+  "dependencies": {},
+  "scripts": {
+    "build": "npx webpack"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
