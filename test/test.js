@@ -1,4 +1,3 @@
-
 var FeedbackSD = require("../src/feedback");
 var Const = require("../src/consts");
 var assert = require('assert');

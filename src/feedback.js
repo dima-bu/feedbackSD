@@ -120,8 +120,6 @@ class FeedbackSD {
             reqObject = this.getFormValues();
         }
 
-        reqObject = this.getFormValues();
-
         let xhr = new XMLHttpRequest();
         let body = 'name=' + encodeURIComponent(reqObject.name) +
             '&email=' + encodeURIComponent(reqObject.email)+
