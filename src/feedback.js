@@ -114,7 +114,7 @@ class FeedbackSD {
 
         let reqObject = {};
 
-        if (!reqObject) {
+        if (req) {
             reqObject = req;
         } else {
             reqObject = this.getFormValues();
