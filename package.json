@@ -1,6 +1,6 @@
 {
-  "name": "feedbackSD",
-  "version": "0.0.1",
+  "name": "feedback-sd",
+  "version": "0.0.2",
   "main": "src/index.js",
   "author": "Dima Bukhal - dimabuhal@gmail.com",
   "license": "MIT",

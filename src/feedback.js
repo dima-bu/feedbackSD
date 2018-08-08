@@ -105,10 +105,20 @@ class FeedbackSD {
         return {name: '', email: '', text: ''};
     }
 
-    sendForm(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    sendForm(e, req) {
+
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
         let reqObject = {};
+
+        if (!reqObject) {
+            reqObject = req;
+        } else {
+            reqObject = this.getFormValues();
+        }
 
         reqObject = this.getFormValues();
 
@@ -121,6 +131,10 @@ class FeedbackSD {
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(body);
         return false;
+    }
+
+    initEndPoint(endpoint){
+        this.params.endpoint = endpoint;
     }
 
     loadForm() {
