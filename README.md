@@ -26,3 +26,58 @@
 | id 	                 | string 	          | id of an element for appending form | True      |               |
 | endpoin 	             | string 	          | url for sending json with form data | True      |               |
 | btnTitle 	             | string 	          | text for feeddback btn              | False     | 'Feedback'    |
+
+
+### Basic Usage with NPM (React example)
+
+1) npm install feedback-sd
+
+2)
+```javascript
+import React from 'react';
+import feedbackSD from 'feedback-sd';
+
+class Form extends React.Component {
+
+  constructor(props) {
+    super(props);
+    feedbackSD.initEndPoint('localhost')
+    this.state = {name: '', email: '', text: ''};
+    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangeText = this.handleChangeText.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    feedbackSD.sendForm(event, {name: this.state.name, email: this.state.email, text: this.state.text})
+    event.preventDefault();
+  }
+
+  handleChangeName(event) {
+    this.setState({name: event.target.value});
+  }
+
+  handleChangeEmail(event) {
+    this.setState({email: event.target.value});
+  }
+
+  handleChangeText(event) {
+    this.setState({text: event.target.value});
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <img src={dog} className="small-img"/>
+        <input type="text" value={this.state.name} onChange={this.handleChangeName} />
+        <input type="text" value={this.state.email} onChange={this.handleChangeEmail} />
+        <input type="text" value={this.state.text} onChange={this.handleChangeText} />
+        <button onClick={this.handleSubmit}>Отправить форму</button>
+      </form>
+    );
+  }
+}
+
+export default Form;
+```
