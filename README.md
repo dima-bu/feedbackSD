@@ -1,4 +1,4 @@
-##feedbackSD - javascript plugin for simple feedback form for any sites
+## feedbackSD - javascript plugin for simple feedback form for any sites
 
 ### Basic Usage without NPM
 1) аdd sript tag to head section of html
@@ -19,6 +19,7 @@
   feedbackSD.init({id:'feedbackID', endpoin: 'localhost'})
 </script>
 
+## params for init function
 ```
 | Param          	     | Type               | Description                         | Required  | Defalt value  |
 |------------------------|--------------------|------------------------------------ | --------- |-------------- |

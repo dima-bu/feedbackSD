@@ -1,0 +1,80 @@
+fbSD_wrapper {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.fbSD_wrapper form {
+    position: fixed;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    background-color: #ffffff;
+    border-radius: 0px;
+    outline: 0;
+    padding: 25px;
+    top: 20%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.fbSD_wrapper input, .fbSD_wrapper textarea {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 26px;
+    line-height: 1.42857;
+    padding: 18px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.fbSD_wrapper label {
+    color: #000000;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fbSD_wrapper textarea {
+    height: 100%;
+}
+
+.fbSD_wrapper form button {
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    background: #fed43c;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.fbSD_wrapper > button {
+    width: 100% !important;
+    height: auto !important;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    background: #fed43c;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.fbSD_wrapper form .close_btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 20px;
+    color: #000000;
+    cursor: pointer;
+}
