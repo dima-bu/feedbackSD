@@ -30,9 +30,11 @@ feedbackSD - javascript plugin for simple feedback form for any sites
 
 ### Basic Usage with NPM (React example)
 
-1) npm install feedback-sd
 
-2)
+```javascript
+ npm install feedback-sd
+```
+
 ```javascript
 import React from 'react';
 import feedbackSD from 'feedback-sd';
@@ -69,7 +71,6 @@ class Form extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <img src={dog} className="small-img"/>
         <input type="text" value={this.state.name} onChange={this.handleChangeName} />
         <input type="text" value={this.state.email} onChange={this.handleChangeEmail} />
         <input type="text" value={this.state.text} onChange={this.handleChangeText} />
