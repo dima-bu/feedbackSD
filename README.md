@@ -1,6 +1,9 @@
 feedbackSD - javascript plugin for simple feedback form for any sites
 
 ### Basic Usage without NPM
+
+[Live demo](//http://dima-bu.github.io/feedback-sd/index.html)
+
 1) аdd sript tag to head section of html
 
 ```html
