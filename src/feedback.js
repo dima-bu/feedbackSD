@@ -128,6 +128,7 @@ export default class FeedbackSD {
         xhr.open('POST', this.params.endpoint, true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send(body);
+        this.closeForm();
         return false;
     }
 

@@ -6,10 +6,11 @@
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "dev": "npx webpack --env.development",
-    "prod": "npx webpack --env.production",
+    "build:dev": "npx webpack --env.development",
+    "build:prod": "npx webpack --env.production",
     "test": "jest --env=jsdom --notify",
-    "live": "npx webpack --env.development && webpack-dev-server --env.development"
+    "live": "npx webpack --env.development && webpack-dev-server --env.development",
+    "server": "json-server --watch example/db.json"
   },
   "jest": {
     "verbose": true,

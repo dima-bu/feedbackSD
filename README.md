@@ -90,11 +90,16 @@ export default Form;
 
 ### Development mode
 
+
+
 ```javascript
 git clone https://github.com/dima-bu/feedbackSD.git
 cd ./feedbackSD
 npm i
+npm install -g json-server
 npm run live
+npm run server
 ```
 
 Open in browser http://localhost:9000
+After send form you cah show result in file example/db.json

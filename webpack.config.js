@@ -7,6 +7,13 @@ module.exports = env => {
 
         return {
             devServer: {
+                proxy: {
+                    '/api': {
+                        target: 'http://localhost:3000/feedbacks',
+                        pathRewrite: {'^/api' : ''}
+                    }
+                },
+                open: true,
                 contentBase: path.join(__dirname, 'dist'),
                 compress: true,
                 port: 9000,
