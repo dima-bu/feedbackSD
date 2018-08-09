@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Строительный двор</title>
+    <script src="feedbackSD.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .wrapper {
+        display: flex;
+        color: #fff;
+    }
+
+    .aside {
+        background-color: red;
+        width: 30%;
+        padding: 30px;
+    }
+
+    .main-section {
+        background-color: gray;
+        width: 70%;
+        padding: 30px;
+    }
+
+    form label {
+        width: 150px;
+        display: inline-block;
+    }
+
+    form div {
+        padding: 10px 0;
+    }
+
+</style>
+<body>
+<div class="wrapper">
+
+    <div class="main-section">
+        <h1>Строительный двор</h1>
+        <p>Кухня, для большинства людей, не просто помещение для приготовления еды, но и гостиная, столовая, главное
+            место встречи всех членов семьи. И значит, пространство должно быть функциональным и удобным, уютным и
+            красивым. Использование ковра в оформлении добавляет кухонному интерьеру не только оригинальности и изыска,
+            но и позволяет решать ряд практических задач.
+            Целесообразность применения ковровых изделий в кухонном пространстве у многих вызывает сомнение. Чтобы
+            опровергнуть существующее мнение, рассмотрим достоинства и недостатки, свойства и характеристики кухонных
+            ковриков, и что важно учесть для правильного выбора.</p>
+    </div>
+    <div class="aside">
+        <h2>Реклама</h2>
+        <div id="feedback2" class="fbSD_wrapper"></div>
+    </div>
+</div>
+<script>
+  feedbackSD.init({id:'feedback2', endpoint: 'api', initBtnTitle: 'Оставить отзыв'})
+</script>
+</body>
+</html>

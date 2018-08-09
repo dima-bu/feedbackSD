@@ -19,6 +19,7 @@ feedbackSD - javascript plugin for simple feedback form for any sites
   feedbackSD.init({id:'feedbackID', endpoin: 'localhost'})
 </script>
 
+
 ## params for init function
 ```
 | Param          	     | Type               | Description                         | Required  | Defalt value  |
@@ -82,3 +83,19 @@ class Form extends React.Component {
 
 export default Form;
 ```
+
+
+### Development mode
+
+1. git pull https://github.com/dima-bu/feedbackSD.git
+
+2.
+```javascript
+npm i
+```
+
+3.
+```javascript
+npm run live
+```
+4. open http://localhost:9000

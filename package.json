@@ -6,9 +6,10 @@
   "license": "MIT",
   "dependencies": {},
   "scripts": {
-    "dev": "npx webpack --env.NODE_ENV=local",
+    "dev": "npx webpack --env.development",
     "prod": "npx webpack --env.production",
-    "test": "jest --env=jsdom --notify"
+    "test": "jest --env=jsdom --notify",
+    "live": "npx webpack --env.development && webpack-dev-server --env.development"
   },
   "jest": {
     "verbose": true,
@@ -23,6 +24,7 @@
     "jest": "^23.4.2",
     "regenerator-runtime": "^0.12.1",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }
