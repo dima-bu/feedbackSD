@@ -12,4 +12,4 @@ const Const = {
     FORM_TEXT: FORM_TEXT
 };
 
-module.exports = Const;
+export default Const;

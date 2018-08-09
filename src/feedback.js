@@ -1,6 +1,6 @@
-const Const = require("../src/consts");
+import Const from '../src/consts';
 
-class FeedbackSD {
+export default class FeedbackSD {
     constructor() {
         this.params = {
             initDomId:'',
@@ -163,5 +163,3 @@ class FeedbackSD {
         this.params.isInit = false;
     }
 }
-
-module.exports = FeedbackSD;
