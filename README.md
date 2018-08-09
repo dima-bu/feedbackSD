@@ -87,15 +87,11 @@ export default Form;
 
 ### Development mode
 
-1. git pull https://github.com/dima-bu/feedbackSD.git
-
-2.
 ```javascript
+git clone https://github.com/dima-bu/feedbackSD.git
+cd ./feedbackSD
 npm i
-```
-
-3.
-```javascript
 npm run live
 ```
-4. open http://localhost:9000
+
+Open in browser http://localhost:9000
